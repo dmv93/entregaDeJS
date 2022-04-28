@@ -34,7 +34,7 @@ console.log(tercero)
 }
 
 // EJERCICIO 2
-function ejercicio2() {
+const ejercicio2 = function () {
   const frase = prompt("Escribe una frase");
   const letra = prompt("Escribe una letra");
 
@@ -48,16 +48,15 @@ function ejercicio2() {
       arrr.push(i);
     }
   }
-
-  alert("La letra " + letra + " aparece " + arrr.length + " veces");
-}
+  return alert("La letra " + letra + " aparece " + arrr.length + " veces");
+};
 
 /* 
 
 */
 
 // EJERCICIO 3
-function ejercicio3() {
+const ejercicio3 = (ejercicio3) => {
   var primero = prompt("Dime el primer número");
   primero = parseInt(primero);
   var segundo = prompt("Dime el segundo número");
@@ -80,14 +79,14 @@ function ejercicio3() {
     var nombre = prompt("Dime tu nombre");
     alert(nombre.length);
   }
-}
+};
 
 /* 
 
 */
 
 // EJERCICIO 4
-function ejercicio4() {
+const ejercicio4 = (ejercicio4) => {
   const usuario = "usuario1";
   const contraseña = "abcd";
   var comprobar = 1;
@@ -107,13 +106,13 @@ function ejercicio4() {
       comprobar++;
     }
   } while (comprobar < 3);
-}
+};
 /* 
 
 */
 
 // EJERCICIO 5
-function ejercicio5() {
+(function () {
   var letra = prompt("Dime una letra por favor");
 
   if (letra === "a") {
@@ -125,18 +124,52 @@ function ejercicio5() {
   } else {
     alert("ahaha");
   }
-}
+})();
 /* 
 
 */
 
 // EJERCICIO 6
-function ejercicio6() {
-    const palabras = ["Tigre", "Anaconda", "León", "Boa", "Mariposa", "Delfín", "Ballena"];
+const ejercicio6 = function () {
+  var miarr = [];
+  var aux;
+  alert("Vas a darme al menos tres números a continuación");
+  var numeroPregunta = prompt("Dime un número");
+  numeroPregunta = parseInt(numeroPregunta);
+  miarr.push(numeroPregunta);
+  var numeroPregunta = prompt("Dime un número");
+  numeroPregunta = parseInt(numeroPregunta);
+  miarr.push(numeroPregunta);
+  var numeroPregunta = prompt("Dime un número");
+  numeroPregunta = parseInt(numeroPregunta);
+  miarr.push(numeroPregunta);
 
-    const orden = palabras.sort();
-    alert(orden); 
-}
+  function test () {
+    var eleccion = prompt("Elige entre añadir o calcular");
+    return eleccion
+  }
+  var eleccion = prompt("Elige entre añadir o calcular");
+
+  if (eleccion === 'añadir') {
+    var numeroPregunta = prompt("Dime un número");
+    numeroPregunta = parseInt(numeroPregunta);
+    miarr.push(numeroPregunta);
+    eleccion = test()
+  } else if (eleccion === 'calcular') {
+    for (let i = 0; i < miarr.length - 1; i++) {
+      for (let j = 0; j < miarr.length; j++) {
+        if (miarr[j] > miarr[j + 1]) {
+          aux = miarr[j];
+          miarr[j] = miarr[j + 1];
+          miarr[j + 1] = aux;
+        }
+      }
+    }
+    alert(miarr)
+  } else {
+    alert("No se que pasa");
+  }
+};
 /* 
 
 */
